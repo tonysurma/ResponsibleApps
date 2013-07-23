@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/menu_request"
+        android:title="@string/MenuRequest"
+        android:icon="@drawable/icon" />
+  <item android:id="@+id/menu_refresh"
+      android:title="@string/MenuRefresh"
+      android:icon="@drawable/icon" />
+  <item android:id="@+id/menu_httpclient"
+    android:title="@string/MenuHttpClient"
+    android:icon="@drawable/icon" />
+  <item android:id="@+id/menu_async"
+    android:title="@string/MenuAsync"
+    android:icon="@drawable/icon" />
+</menu>

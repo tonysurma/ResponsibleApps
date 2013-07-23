@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">SampleAndroidApplication</string>
+
+    <string name="MenuRequest">Request</string>
+    <string name="MenuRefresh">Refresh</string>
+    <string name="MenuHttpClient">HttpClient</string>
+    <string name="MenuAsync">Async</string>
+</resources>
