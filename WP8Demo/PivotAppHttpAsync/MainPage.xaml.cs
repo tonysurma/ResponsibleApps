@@ -64,6 +64,7 @@ namespace PivotAppHttpAsync {
         private async void MakeAsyncHttpClientRequest() {
             try {
 
+                App.ViewModel.ClearList();
                 UpdateConnectionStatus("Initiating Connection", true);
 
                 HttpClientHandler handler = new HttpClientHandler();
@@ -97,6 +98,8 @@ namespace PivotAppHttpAsync {
         void MakeAsynchronusRequest() {
             var request = HttpWebRequest.Create("http://www.microsoft.com/");
             request.Method = "GET";
+
+            App.ViewModel.ClearList();
             UpdateConnectionStatus("Initiating Connection", true);
 
             //doesn't exist in silverlight
@@ -138,6 +141,8 @@ namespace PivotAppHttpAsync {
         void MakeSynchronousRequest() {
             var request = HttpWebRequest.Create("http://www.microsoft.com/");
             request.Method = "GET";
+
+            App.ViewModel.ClearList();
             UpdateConnectionStatus("Initiating Connection");
 
             _connectionTimer = new WebRequestTimeOut(request, 2000);
@@ -179,6 +184,9 @@ namespace PivotAppHttpAsync {
         void RefreshTasks() {
             //get and fetch from akavache list of tasks
             //will refresh first with cached list of tasks (if any) and again with fetched
+
+            if (App.ViewModel.Items.Count < 5)
+                App.ViewModel.ClearList();
 
             BlobCache.LocalMachine.GetAndFetchLatest("TaskList", RetrieveLatestTasks()).Subscribe(l => {
                 Debug.WriteLine("Got TaskList");
